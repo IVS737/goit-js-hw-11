@@ -36,7 +36,7 @@ const parseImagesToHtmlStringArr = images =>
   images.map(
     image =>
       `<a href="${image.largeImageURL}">
-      <img src=${image.previewURL} alt=${image.type} loading="lazy" />
+      <img class="image" src=${image.previewURL} alt=${image.type} loading="lazy" />
       <div class="photo-card">
   <div class="info">
     <p class="info-item">
@@ -112,9 +112,9 @@ const handleSearch = async e => {
 const loadMoreImages = async () => {
   currentPage++;
 
-  const { hits } = await getImages(inputValue, currentPage);
+  const { hits, totalHits } = await getImages(inputValue, currentPage);
 
-  if (data.totalHits < IMAGES_PER_PAGE * currentPage) {
+  if (totalHits < IMAGES_PER_PAGE * currentPage) {
     loadMoreButton.hidden = true;
 
     return showNoMoreImagesInfo();
