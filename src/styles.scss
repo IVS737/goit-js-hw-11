@@ -1,0 +1,48 @@
+.gallery {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.search-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+
+  &__input {
+    border-radius: 20px;
+    border-color: #000;
+    width: 300px;
+    height: 25px;
+    padding-left: 10px;
+    &:hover,
+    &:focus {
+      color: black;
+      border-color: red;
+    }
+  }
+
+  &__button {
+    border-radius: 20px;
+    width: 100px;
+    height: 25px;
+    background-color: white;
+    &:hover,
+    &:focus {
+      color: red;
+      border-color: red;
+    }
+  }
+}
+
+.photo-card {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(135, 206, 235, 0.5);
+  width: 150px;
+  height: 200px;
+  border: 1px, solid, black;
+}
